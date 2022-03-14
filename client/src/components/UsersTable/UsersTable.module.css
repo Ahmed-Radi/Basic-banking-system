@@ -1,0 +1,28 @@
+#table td:nth-child(2) {
+    text-transform: capitalize;
+}
+#table td:first-child {
+    font-weight: bold;
+}
+#table tr:hover > td {
+    background-color: #52c0ff28;
+}
+.button {
+    color: rgb(255, 255, 255);
+    background: #00588b;
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: capitalize;
+    transition: all 0.5s ease-out;
+}
+.button:hover {
+    box-shadow: 1px 3px 2px #ccc;
+    background-color: #fff;
+    color: #00588b;
+    transition: all 0.5s ease-out;
+}
+@media (max-width: 769px) {
+    #tableContainer {overflow-x: scroll;}
+}

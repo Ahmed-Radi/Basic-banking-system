@@ -1,0 +1,1 @@
+export const READ_USER_DATA = 'READ_USER_DATA'

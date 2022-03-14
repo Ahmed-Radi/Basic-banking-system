@@ -1,0 +1,43 @@
+.form {margin: 20px 0;}
+.formInputs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.validation {
+    text-transform: capitalize;
+    color: #ec0101d3;
+}
+.label {
+    margin-right: 5px;
+    display: inline-block;
+    width: 115px;
+}
+.input {
+    padding: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 190px;
+    text-transform: capitalize;
+}
+.button {
+    margin: 10px 0;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00588b;
+    color: #fff;
+    transition: all 0.5s ease-out;
+}
+.button:hover {
+    box-shadow: 1px 3px 2px #ccc;
+    background-color: #fff;
+    color: #00588b;
+    transition: all 0.5s ease-out;
+}
+#table td:nth-child(3) {text-transform: capitalize;}
+#table td:first-child {font-weight: bold;}
+#table tr:hover > td {background-color: #52c0ff28;}
+@media  (max-width: 768px) {
+    #tableContainer {overflow-x: scroll;}
+}

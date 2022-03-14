@@ -1,0 +1,9 @@
+.allTransaction {padding-top: 70px; /* 56px */}
+.allTransaction h2 {margin: 20px 10px}
+#table td:nth-child(3),
+#table td:nth-child(4) {text-transform: capitalize;}
+#table td:first-child {font-weight: bold;}
+#table tr:hover > td {background-color: #52c0ff28;}
+@media  (max-width: 768px) {
+    #tableContainer {overflow-x: scroll;}
+}
