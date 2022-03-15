@@ -8,6 +8,7 @@ import Info from '../Info/Info';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import moment from 'moment';
 
 export default function Transaction() {
     // Dispatch Action - Redux
@@ -164,15 +165,16 @@ export default function Transaction() {
                             transaction ? transaction.map((transaction, index) => (
                             <tr key={transaction._id}>
                                 <td>{index+1}</td>
-                                <td>{transaction.transactionTime.replace('T', ' ').replace('Z', '')}</td>
+                                <td>{moment(transaction.transactionTime).format('MMMM Do YYYY, h:mm:ss a')}</td>
+                                {/* <td>{transaction.transactionTime.replace('T', ' ').replace('Z', '')}</td> */}
                                 <td>
                                     {usersInfo.map((user) => (
                                         user._id === transaction.sendTo ? user.name : ''
                                     ))}
                                 </td>
-                                <td>{transaction.cost}</td>
+                                <td>{transaction.cost}$</td>
                             </tr>
-                            )) : <tr><td>'loadding...'</td></tr>
+                            )) : <tr><td>'loading...'</td></tr>
                         }
                     </tbody>
                 </table>

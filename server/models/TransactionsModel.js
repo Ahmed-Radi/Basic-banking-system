@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+var moment = require('moment');
 
 const Schema = new mongoose.Schema({
     transactionTime: {
         type: Date,
-        default: new Date().setHours(new Date().getHours() + 2),
+        default: moment().toDate(),
     },
     cost: {
         type: Number,

@@ -6,4 +6,6 @@
 #table tr:hover > td {background-color: #52c0ff28;}
 @media  (max-width: 768px) {
     #tableContainer {overflow-x: scroll;}
+    #table td {min-width: 200px;}
+    #table td:nth-child(1) {min-width: 10px;}
 }
