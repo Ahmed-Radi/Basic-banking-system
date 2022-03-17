@@ -84,12 +84,12 @@ export default function Transaction() {
             cost: money,
             user: updatedSender._id,
             sendTo: updatedSendee._id,
-        }).then(data => console.log(data))
+        })
         axios.patch(`https://ahmed-radi-bank-system-api.herokuapp.com/update/${userId}`, {
             balanceSender: updatedSender.balance,
             balanceSendee: updatedSendee.balance,
             id: updatedSendee._id
-        }).then(data => console.log(data))
+        })
     }
 
     function getUser(personId) {

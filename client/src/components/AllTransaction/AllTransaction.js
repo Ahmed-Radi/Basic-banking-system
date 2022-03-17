@@ -16,7 +16,7 @@ export default function AllTransaction() {
     useEffect(() => {
         axios.get(`https://ahmed-radi-bank-system-api.herokuapp.com/all`)
         .then(response => (setTransaction(response.data)))
-    },[])
+    },[transaction.length])
 
     return (
         <div className={styles.allTransaction}>
