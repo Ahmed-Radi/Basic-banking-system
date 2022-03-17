@@ -2,8 +2,7 @@ import { READ_USER_DATA } from './../Types';
 
 export const fetchUser = () => {
     return (dispatch) => {
-        fetch(`http://localhost:5000`).then(response => response.json()).then(data => {
-            console.log(data)
+        fetch(`https://ahmed-radi-bank-system-api.herokuapp.com`).then(response => response.json()).then(data => {
             dispatch({
                 type: READ_USER_DATA,
                 data: data

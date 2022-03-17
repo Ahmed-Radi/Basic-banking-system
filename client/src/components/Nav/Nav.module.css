@@ -4,8 +4,8 @@
     width: 100%;
     box-shadow: 3px -14px 42px #000;
 }
-.navLink {position: relative;display: inline-block;}
-.navLink:hover {color: #000!important}
+.navLink {position: relative;display: inline-block;transition: color 0.7s ease;}
+.navLink:hover {color: #000!important;transition: color 0.7s ease;}
 .navLink::after {
     content: '';
     display: block;
@@ -41,7 +41,6 @@
     transition: width 0.5s ease;
 }
 .selected:hover::after {
-    color: red !important;
     content: '';
     display: block;
     width: 90%;

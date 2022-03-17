@@ -14,10 +14,8 @@ export default function AllTransaction() {
     const [transaction, setTransaction] = useState([])
 
     useEffect(() => {
-        axios.get(`/all`)
-        .then(response => (
-            setTransaction(response.data)
-        ))
+        axios.get(`https://ahmed-radi-bank-system-api.herokuapp.com/all`)
+        .then(response => (setTransaction(response.data)))
     },[])
 
     return (
@@ -41,18 +39,18 @@ export default function AllTransaction() {
                                     <td>{index+1}</td>
                                     <td>{moment(transaction.transactionTime).format('MMMM Do YYYY, h:mm:ss a')}</td>
                                     <td>
-                                        {userInfo.map((user) => (
+                                        {userInfo?.map((user) => (
                                             user._id === transaction.user ? user.name : ''
                                         ))}
                                     </td>
                                     <td>
-                                        {userInfo.map((user) => (
+                                        {userInfo?.map((user) => (
                                             user._id === transaction.sendTo ? user.name : ''
                                         ))}
                                     </td>
                                     <td>{transaction.cost}$</td>
                                 </tr>
-                                )) : <tr><td>'loading...'</td></tr>
+                                )) : <tr><td>loading...</td></tr>
                             }
                         </tbody>
                     </table>

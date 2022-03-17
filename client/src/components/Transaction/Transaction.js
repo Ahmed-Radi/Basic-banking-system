@@ -28,9 +28,9 @@ export default function Transaction() {
     // Set transaction in state
     useEffect(() => {
         const id = params.id;
-        fetch(`${id}`)
+        fetch(`https://ahmed-radi-bank-system-api.herokuapp.com/transaction/${id}`)
         .then(response => response.json())
-        .then(transaction => (
+        .then(transaction =>(
             setTransaction(transaction)
         ))
     },[])
@@ -80,16 +80,16 @@ export default function Transaction() {
             })
         );
 
-        axios.post('/transaction', {
+        axios.post('https://ahmed-radi-bank-system-api.herokuapp.com/transaction', {
             cost: money,
             user: updatedSender._id,
             sendTo: updatedSendee._id,
-        })
-        axios.patch(`/update/${userId}`, {
+        }).then(data => console.log(data))
+        axios.patch(`https://ahmed-radi-bank-system-api.herokuapp.com/update/${userId}`, {
             balanceSender: updatedSender.balance,
             balanceSendee: updatedSendee.balance,
             id: updatedSendee._id
-        })
+        }).then(data => console.log(data))
     }
 
     function getUser(personId) {
@@ -105,7 +105,6 @@ export default function Transaction() {
             return;
         }
         postTransactionData({ sender, sendee, money });
-        // console.log(errors)
         navigate('/transactions')
     };
 
